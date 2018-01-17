@@ -19,14 +19,14 @@
                 padding:1rem;
                 height:100vh;
             }
-            nav ul li.nav-pri ul {
+            nav span.sub-menu + ul {
+                height:auto;
+                visibility: visible;
+                margin-left:2rem;
+            }
+            nav span.closed + ul {
                 height:0;
                 visibility: hidden;
-            }
-            nav span.open + ul {
-                height:auto !important;
-                visibility: visible !important;
-                margin-left:2rem;
             }
             li.nav-pri {
                 line-height: 3rem;
@@ -37,16 +37,7 @@
             li.nav-pri span:not([class]) {
                 margin-left:2rem;
             }
-            li.nav-pri > span.close::before {
-                content: "\FF0B";
-                display: inline-block;
-                position: relative;
-                top: 0.25rem;
-                width:1rem;
-                margin-right:1rem;
-                font-size: 2rem;
-            }
-            li.nav-pri > span.open::before {
+            li.nav-pri > span.sub-menu::before {
                 content: "\FF0D";
                 display: inline-block;
                 position: relative;
@@ -55,6 +46,9 @@
                 margin-right:1rem;
                 font-size: 2rem;
             }
+            li.nav-pri > span.closed::before {
+                content: "\FF0B" !important;
+            }
         </style>
     </head>
     <body>
@@ -62,21 +56,21 @@
             <ul id="nav-items">
                 <li class="nav-pri"><span>No Sub Menu</span></li>
                 <li class="nav-pri">
-                    <span class="close">Menu 1</span>
+                    <span class="sub-menu closed">Menu 1</span>
                     <ul>
                         <li class="nav-sec">Menu 1 > Sub 1</li>
                         <li class="nav-sec">Menu 1 > Sub 2</li>
                     </ul>
                 </li>
                 <li class="nav-pri">
-                    <span class="close">Menu 2</span>
+                    <span class="sub-menu closed">Menu 2</span>
                     <ul>
                         <li class="nav-sec">Menu 2 > Sub 1</li>
                         <li class="nav-sec">Menu 2 > Sub 2</li>
                     </ul>
                 </li>
                 <li class="nav-pri">
-                    <span class="close">Menu 3</span>
+                    <span class="sub-menu closed">Menu 3</span>
                      <ul>
                         <li class="nav-sec">Menu 3 > Sub 1</li>
                         <li class="nav-sec">Menu 3 > Sub 2</li>
@@ -108,11 +102,9 @@
 
         <script>
             // Nav Stuff...
-            var menu = document.getElementById('nav-items');
-            menu.addEventListener('click', function(e){
-                if(e.target.classList.contains('open') || e.target.classList.contains('close')){
-                    e.target.classList.toggle('close');
-                    e.target.classList.toggle('open');
+            document.getElementById('nav-items').addEventListener('click', function(e){
+                if( e.target.classList.contains('sub-menu') ){
+                    e.target.classList.toggle('closed');
                 }
             });
 
