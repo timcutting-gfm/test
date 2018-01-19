@@ -1,7 +1,6 @@
 :root {
     --pri-col:#9c0;
     --sec-col:#09c;
-    --trn-blk:rgba(0,50,100,0.8);
 }
 
 /* Reset */
@@ -27,7 +26,7 @@ nav {
     width:18rem;
     height:100vh;
     transform: translateX(-3rem);
-    transition: transform 1.5s;
+    transition: transform 1s ease-in-out;
 }
 nav ul {
     height:100vh;
@@ -40,18 +39,64 @@ nav ul {
     line-height: 3rem;
     text-align: center;
     cursor: pointer;
-    
     outline: none;
 }
-nav ul, #nav-open {
+#nav-items, #nav-open {
     float:left;
-    background: var(--trn-blk);
+    background: rgba(0,50,100,0.8);
     color: #fff;
-    /*backdrop-filter: brightness(0.3); /* experimental */
+    
 }
+#nav-open span {
+    transform: translateX(12px);
+}
+#nav-open span, #nav-open span:before, #nav-open span:after {
+    cursor: pointer;
+    height: 2px;
+    width: 26px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: '';
+}
+  
+#nav-open span:before {
+    top: -9px;
+    transform: rotate(0);
+}
+  
+#nav-open span:after {
+    bottom: -9px; 
+    transform: rotate(0);
+}
+
+
+
+#nav-open span, #nav-open span:before, #nav-open span:after {
+    transition: all 0.5s ease-in-out;
+}
+  
+#nav-open.active span {
+    background-color: transparent;
+}
+  
+#nav-open.active span:before, #nav-open.active span:after {
+    bottom: -9px;
+}
+  
+#nav-open.active span:before {
+    transform: rotate(45deg);
+    transform-origin: top left;
+}
+  
+#nav-open.active span:after {
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+}
+
 nav.open {
     transform: translateX(-18rem);
-    transition: transform 0.5s;
+    transition: transform 0.5s ease-in-out;
 }
 nav span.sub-menu + ul {
     height:auto;
@@ -82,4 +127,10 @@ li.nav-pri > span.sub-menu::before {
 }
 li.nav-pri > span.closed::before {
     content: "\FF0B" !important;
+}
+/* experimental */
+@supports ( backdrop-filter:blur() ) {
+    nav ul {
+        backdrop-filter: blur(0.1rem); 
+    }
 }
