@@ -1,6 +1,12 @@
-/* Minified CSS Reset */
-*{box-sizing:border-box;}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,button,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1.5}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
-body {font:300 1rem/2 'Lato',sans-serif;}
+:root {
+    --pri-col:#9c0;
+    --sec-col:#09c;
+    --trn-blk:rgba(0,50,100,0.8);
+}
+
+/* Reset */
+*{font:300 1rem/2 Lato,sans-serif;box-sizing:border-box;margin:0;padding:0;border:0;vertical-align:baseline}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}
+
 h1,h2,h3 {font-family: 'Quattrocento'; font-weight: 700; color:#333;}
 h1 {font-size:3.5rem;}
 h2 {font-size:2.5rem;}
@@ -39,7 +45,7 @@ nav ul {
 }
 nav ul, #nav-open {
     float:left;
-    background: rgba(0,0,0,0.8);
+    background: var(--trn-blk);
     color: #fff;
     /*backdrop-filter: brightness(0.3); /* experimental */
 }
