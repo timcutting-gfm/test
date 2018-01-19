@@ -70,8 +70,6 @@ nav ul {
     transform: rotate(0);
 }
 
-
-
 #nav-open span, #nav-open span:before, #nav-open span:after {
     transition: all 0.5s ease-in-out;
 }
