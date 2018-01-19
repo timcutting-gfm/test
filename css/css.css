@@ -9,9 +9,7 @@ ul {
     list-style: none;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-family: 'Oswald';
     font-weight: 300;
     text-transform: uppercase;
@@ -19,12 +17,6 @@ h3 {
 
 section {
     margin: 5rem auto;
-}
-
-#body-wrap {
-    max-width: 66vw;
-    margin: auto;
-    overflow: hidden;
 }
 
 
@@ -56,8 +48,7 @@ nav ul {
     outline: none;
 }
 
-#nav-items,
-#nav-open {
+#nav-items, #nav-open {
     float: left;
     background: url(../img/tex.png) rgba(0, 0, 0, 0.8);
     color: #fff;
@@ -67,9 +58,7 @@ nav ul {
     transform: translateX(12px);
 }
 
-#nav-open span,
-#nav-open span:before,
-#nav-open span:after {
+#nav-open span, #nav-open span:before, #nav-open span:after {
     cursor: pointer;
     height: 2px;
     width: 26px;
@@ -89,18 +78,15 @@ nav ul {
     transform: rotate(0);
 }
 
-#nav-open span,
-#nav-open span:before,
-#nav-open span:after {
-    transition: all 0.5s ease-in-out;
+#nav-open span, #nav-open span:before, #nav-open span:after {
+    transition: all 0.3s ease-in-out;
 }
 
 #nav-open.active span {
     background-color: transparent;
 }
 
-#nav-open.active span:before,
-#nav-open.active span:after {
+#nav-open.active span:before, #nav-open.active span:after {
     bottom: -9px;
 }
 
@@ -116,7 +102,7 @@ nav ul {
 
 nav.open {
     transform: translateX(-18rem);
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 nav span.sub-menu+ul {
@@ -154,6 +140,24 @@ li.nav-pri>span.sub-menu::before {
 
 li.nav-pri>span.closed::before {
     content: "\FF0B" !important;
+}
+
+
+/* Footer */
+
+footer p {
+    width: 100%;
+}
+
+footer svg {
+    width: 6.66rem;
+    margin: 1rem auto;
+}
+
+footer svg path {
+    fill: rgba(0, 0, 0, 0.2);
+    fill-rule: evenodd;
+    clip-rule: evenodd;
 }
 
 
