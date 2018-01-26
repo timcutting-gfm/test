@@ -1,0 +1,52 @@
+* {
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: -0.01rem;
+}
+body {
+    padding: 2rem;
+}
+.heading-1 {
+    font-weight : 100; 
+    font-size   : 3.85rem;
+    line-height : 125%;
+}
+.subheading-1 {
+    font-weight : 100; 
+    font-size   : 2.15rem;
+    line-height : 125%  
+}
+.paragraph-1 {
+    font-weight : 200; 
+    font-size   : 1.25rem;
+    line-height : 125%;  
+}
+.heading-2 {
+    font-weight : 100; 
+    font-size   : 2.85rem;
+    line-height : 125%;
+}
+.subheading-2 {
+    font-weight : 200; 
+    font-size   : 1.50rem;
+    line-height : 125%  
+}
+.paragraph-2 {
+    font-weight : 200; 
+    font-size   : 1.15rem;
+    line-height : 125%;  
+}
+.heading-3 {
+    font-weight : 100; 
+    font-size   : 2.15rem;
+    line-height : 125%;
+}
+.subheading-3 {
+    font-weight : 400; 
+    font-size   : 1.25rem;
+    line-height : 125%  
+}
+.paragraph-3 {
+    font-weight : 400; 
+    font-size   : 0.95rem;
+    line-height : 125%;  
+}
