@@ -44,7 +44,7 @@ if (ie) { // Looks we got ourselves an IE user...
 
     ieBody.insertBefore(ieContainer, ieBody.firstChild);
 
-    (function() {
+    (function() { // Polyfill for IE.
         if (typeof NodeList.prototype.forEach === "function") return false;
         NodeList.prototype.forEach = Array.prototype.forEach;
     })();
