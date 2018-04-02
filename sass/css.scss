@@ -30,7 +30,7 @@ nav {
     height: 100vh;
     transform: translateX(-3rem);
     transition: transform 0.25s ease-in-out;
-    backdrop-filter: blur(0.5rem);
+    
 }
 
 nav ul {
@@ -38,7 +38,7 @@ nav ul {
     width: 15rem;
     padding-left: 1rem;
     backdrop-filter: blur(0.5rem);
-    -webkit-backdrop-filter: blur(0.1rem);
+    -webkit-backdrop-filter: blur(0.5rem);
 }
 
 #nav-open {
@@ -49,6 +49,31 @@ nav ul {
     text-align: center;
     cursor: pointer;
     outline: none;
+    span, span:before, span:after {
+        transform: translateX(12px);
+        cursor: pointer;
+        height: 2px;
+        width: 26px;
+        background: #fff;
+        position: absolute;
+        display: block;
+        transition: all 0.3s ease-in-out;
+        content: '';
+        &:before {
+            top: -9px;
+            transform: rotate(0);
+        }
+        &:after {
+            bottom: -9px;
+            transform: rotate(0);
+        }
+    }
+    &.active span {
+        background-color: transparent;
+        &::before, &::after {
+            bottom: -9px;
+        }
+    }
 }
 
 #nav-items, #nav-open {
@@ -57,40 +82,13 @@ nav ul {
     color: #fff;
 }
 
-#nav-open span {
-    transform: translateX(12px);
-}
-
-#nav-open span, #nav-open span:before, #nav-open span:after {
-    cursor: pointer;
-    height: 2px;
-    width: 26px;
-    background: #fff;
-    position: absolute;
-    display: block;
-    content: '';
-}
-
-#nav-open span:before {
-    top: -9px;
-    transform: rotate(0);
-}
-
-#nav-open span:after {
-    bottom: -9px;
-    transform: rotate(0);
-}
-
-#nav-open span, #nav-open span:before, #nav-open span:after {
-    transition: all 0.3s ease-in-out;
-}
 
 #nav-open.active span {
-    background-color: transparent;
+    
 }
 
 #nav-open.active span:before, #nav-open.active span:after {
-    bottom: -9px;
+    
 }
 
 #nav-open.active span:before {
